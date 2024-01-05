@@ -7,7 +7,7 @@ This library wraps the excellent Python HTTP requests library, [Requests](https:
 **Disclaimer**: This library is currently in a developmental stage. Due to the lack of sufficient test case coverage, it should be considered insecure and, at best, experimental. Nonetheless, these features aim to provide a more secure and controlled HTTP request environment, suitable for developers who prioritize stringent security measures in their applications.
 
 ### Features
-- **Blocking Requests to Non-Public Internet IPs**: Prevents access to (some)[https://github.com/zrthstr/anti_SSRF_requests_adapter/blob/49a7724aba8547d762f91471edb202df465ce13a/anti_SSRF_requests_adapter.py#L31] private and [reserved IP ranges](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
+- **Blocking Requests to Non-Public Internet IPs**: Prevents access to [some](https://github.com/zrthstr/anti_SSRF_requests_adapter/blob/49a7724aba8547d762f91471edb202df465ce13a/anti_SSRF_requests_adapter.py#L31) private and [reserved IP ranges](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
 - **Protection Against DNS Rebinding Attacks**: Resolves IP once per session to safeguard against [DNS rebinding](https://en.wikipedia.org/wiki/DNS_rebinding).
 - **Disabling HTTP Redirects**: Redirects are not followed by default to maintain control over request destinations. See [redirect-based SSRF](https://portswigger.net/research/top-10-web-hacking-techniques-of-2017#1).
 - **Forbidding IPv6 Usage**: Blocks all connections to IPv6 addresses. IPv6 support might be enabled in the future as its implications for SSRF become clearer. PRs are welcome.
