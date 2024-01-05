@@ -1,4 +1,4 @@
-# anti_SSRF_requests_adapter - SSRF protection for Python Requests Library
+# anti_SSRF_requests_adapter: SSRF protection for Python Requests Library
 
 ## Overview
 
