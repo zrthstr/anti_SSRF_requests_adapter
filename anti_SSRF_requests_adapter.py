@@ -34,8 +34,7 @@ class AntiSSRFRequestAdapter(HTTPAdapter):
             ipaddress.ip_network('192.168.0.0/16'),
             ipaddress.ip_network('127.0.0.0/8'),
             ipaddress.ip_network('169.254.0.0/16'),
-            ipaddress.ip_network('169.254.169.254/32'),
-            # Add more ranges as needed
+            # what other ranges are relevant?
         ]
         ip_addr = ipaddress.ip_address(ip)
         return any(ip_addr in network for network in disallowed_networks)
