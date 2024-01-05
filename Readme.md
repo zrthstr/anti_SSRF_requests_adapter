@@ -5,7 +5,7 @@
 
 This library wraps the excellent Python HTTP requests library, [Requests](https://requests.readthedocs.io/en/latest/), by adding several [SSRF](https://en.wikipedia.org/wiki/Server-side_request_forgery) related security measures to HTTP requests.
 
-**Disclaimer**: This library is currently in a developmental stage. Due to the lack of sufficient test case coverage, it should be considered insecure and, at best, experimental. Nonetheless, these features aim to provide a more secure and controlled HTTP request environment, suitable for developers who prioritize stringent security measures in their applications.
+**Disclaimer**: This library is currently in a developmental stage. Due to the lack of extensive test case coverage, it should be considered insecure and, at best, experimental. Nonetheless, these features aim to provide a more secure and controlled HTTP request environment, suitable for developers who prioritize stringent security measures in their applications.
 
 ### Features
 - **Blocking Requests to Non-Public Internet IPs**: Prevents access to [some](https://github.com/zrthstr/anti_SSRF_requests_adapter/blob/49a7724aba8547d762f91471edb202df465ce13a/anti_SSRF_requests_adapter.py#L31) private and [reserved IP ranges](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
@@ -14,7 +14,7 @@ This library wraps the excellent Python HTTP requests library, [Requests](https:
 - **Forbidding IPv6 Usage**: Blocks all connections to IPv6 addresses. IPv6 support might be enabled in the future as its implications for SSRF become clearer. PRs are welcome.
 
 ### Limitation
-- currently on `GET` is implemented
+- currently only `GET` is implemented
 
 ### Rationale
 This library is potentially beneficial in cases where untrusted input is passed to an HTTP client, which we believe is always the case when:
