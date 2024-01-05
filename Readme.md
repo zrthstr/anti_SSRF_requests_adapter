@@ -20,7 +20,7 @@ This library wraps the excellent Python HTTP requests library, [Requests](https:
 This library is potentially beneficial in cases where untrusted input is passed to an HTTP client, which we believe is always the case when:
 - DNS is being resolved.
 - An untrusted HTTP endpoint is queried, due to the possibility of encountering HTTP redirects (301, 302, 303, 307, 308).
-- non-trusted e.g: *user-supplied* input is used to craf a url
+- non-trusted e.g: *user-supplied* input is used to craf a URL
 
 We acknowledge that a more effective approach to securing HTTP client libraries might involve isolation at the OS or network level. However, this library provides an application-level solution as an interim measure.
 
