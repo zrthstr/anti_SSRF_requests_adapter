@@ -17,8 +17,9 @@ This library wraps the excellent Python HTTP requests library, [Requests](https:
 
 ### Rationale
 This library is potentially beneficial in cases where untrusted input is passed to an HTTP client, which we believe is always the case when:
-- DNS is being used.
+- DNS is being resolved.
 - An untrusted HTTP endpoint is queried, due to the possibility of encountering HTTP redirects (301, 302, 303, 307, 308).
+- non-trusted e.g: *user-supplied* input is used to craf a url
 
 We acknowledge that a more effective approach to securing HTTP client libraries might involve isolation at the OS or network level. However, this library provides an application-level solution as an interim measure.
 
@@ -32,19 +33,17 @@ pip install git+http://foo/bar
 ## Setup
 ```
 import requests
-from anti_ssrf_requests import AnitSSRFRequestAdapter
+from anti_ssrf_requests import AnitSSRFSession
 
-session = requests.Session()
-session.mount('http://', AntiSSRFRequestAdapter())
-session.mount('https://', AntiSSRFRequestAdapter())
+assrf_session = AntiSSRFSession()
 ```
 
 ## Usage
 ```
 try:
-    response = session.get('http://example.com')
+    response = secure_session.get('http://example.com')
     print(response.content)
 except ValueError as e:
-    print(f"Error during request: {e}")
+    print(f"An error occurred: {e}")
 
 ```
