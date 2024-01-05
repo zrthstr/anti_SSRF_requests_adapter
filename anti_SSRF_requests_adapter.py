@@ -51,7 +51,7 @@ class AntiSSRFSession:
         kwargs['allow_redirects'] = False
         return self.session.get(url, **kwargs)
 
-    # Implement other HTTP methods here..
+    # TBD: Implement other HTTP methods here..
 
 
 assrf_session = AntiSSRFSession()
