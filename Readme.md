@@ -1,6 +1,6 @@
-# anti_SSRF_requests_adapter: SSRF protection for Python Requests Library
+## anti_SSRF_requests_adapter: SSRF protection for Python Requests Library
 
-## Overview
+### Overview
 
 This library wraps the excellent Python HTTP requests library, [Requests](https://requests.readthedocs.io/en/latest/), by adding several [SSRF](https://en.wikipedia.org/wiki/Server-side_request_forgery) related security measures to HTTP requests.
 
@@ -24,13 +24,13 @@ This library is potentially beneficial in cases where untrusted input is passed 
 We acknowledge that a more effective approach to securing HTTP client libraries might involve isolation at the OS or network level. However, this library provides an application-level solution as an interim measure.
 
 
-## Install
+### Install
 ```
 TBD
 pip install git+http://foo/bar
 ```
 
-## Setup
+### Setup
 ```
 import requests
 from anti_ssrf_requests import AnitSSRFSession
@@ -38,7 +38,7 @@ from anti_ssrf_requests import AnitSSRFSession
 assrf_session = AntiSSRFSession()
 ```
 
-## Usage
+### Usage
 ```
 try:
     response = secure_session.get('http://example.com')
