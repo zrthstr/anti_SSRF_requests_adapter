@@ -34,7 +34,7 @@ pip install git+http://foo/bar
 ### Setup
 ```
 import requests
-from anti_ssrf_requests import AnitSSRFSession
+from anti_SSRF_requests_adapter import AnitSSRFSession
 
 assrf_session = AntiSSRFSession()
 ```
