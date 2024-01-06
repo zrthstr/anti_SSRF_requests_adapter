@@ -42,7 +42,7 @@ assrf_session = AntiSSRFSession()
 ### Usage
 ```
 try:
-    response = secure_session.get('http://example.com')
+    response = assrf_session.get('http://example.com')
     print(response.content)
 except ValueError as e:
     print(f"An error occurred: {e}")
