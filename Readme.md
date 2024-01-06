@@ -3,7 +3,7 @@
 
 ### Overview
 
-This library wraps the excellent Python HTTP requests library, [Requests](https://requests.readthedocs.io/en/latest/), by adding several [SSRF](https://en.wikipedia.org/wiki/Server-side_request_forgery) related security measures to HTTP requests.
+This library wraps the excellent Python HTTP client library [Requests](https://requests.readthedocs.io/en/latest/), by adding several [SSRF](https://en.wikipedia.org/wiki/Server-side_request_forgery) related security controlls to HTTP requests.
 
 **Disclaimer**: This library is currently in a developmental stage. Due to the lack of extensive test case coverage, it should be considered insecure and, at best, experimental. Nonetheless, these features aim to provide a more secure and controlled HTTP request environment, suitable for developers who prioritize stringent security measures in their applications.
 
@@ -29,6 +29,7 @@ We acknowledge that a more effective approach to securing HTTP client libraries 
 ```
 TBD
 pip install git+http://foo/bar
+
 ```
 
 ### Setup
