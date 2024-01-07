@@ -1,7 +1,7 @@
 import ssl
 
 import requests
-from requests.adapters import HTTPAdapter, DEFAULT_POOLBLOCK, DEFAULT_POOLSIZE, DEFAULT_RETRIES, BaseAdapter
+from requests.adapters import HTTPAdapter
 import socket
 import ipaddress
 from urllib.parse import urlparse, urlunparse
