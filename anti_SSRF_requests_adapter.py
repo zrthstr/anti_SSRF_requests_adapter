@@ -7,8 +7,6 @@ import ipaddress
 from urllib.parse import urlparse, urlunparse
 import certifi
 
-from urllib3 import PoolManager, Retry
-
 
 class AntiSSRFRequestAdapter(HTTPAdapter):
     def __init__(self, *args, **kwargs):
@@ -48,7 +46,7 @@ class AntiSSRFSession:
             new_url = urlunparse(
                 (parsedURL.scheme, ip, parsedURL.path, parsedURL.params,
                  parsedURL.query, parsedURL.fragment))
-        return self.session.get(new_url, headers={"host": hostname},
+        return self.session.get(new_url, headers={"host": hostname}, verify=False,
                                 **kwargs)
 
     def is_disallowed_ip(self, ip):
@@ -83,10 +81,8 @@ assrf_session = AntiSSRFSession()
 
 def main():
     try:
-        response = assrf_session.get('https://www.google.com/', verify=False)
+        response = assrf_session.get('https://www.google.com/')
         print(response.content)
-        # response = requests.get('https://google.com/')
-        # print(response.content)
     except ValueError as e:
         print(f"An error occurred: {e}")
 
