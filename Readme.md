@@ -10,11 +10,12 @@ This library wraps the excellent Python HTTP client library [Requests](https://r
 ### Features
 - **Blocking Requests to Non-Public Internet IPs**: Prevents access to [some](https://github.com/zrthstr/anti_SSRF_requests_adapter/blob/49a7724aba8547d762f91471edb202df465ce13a/anti_SSRF_requests_adapter.py#L31) private and [reserved IP ranges](https://en.wikipedia.org/wiki/Reserved_IP_addresses).
 - ~~**Protection Against DNS Rebinding Attacks**: Resolves IP once per session to safeguard against [DNS rebinding](https://en.wikipedia.org/wiki/DNS_rebinding).~~
-      Still cant find a propper way to do this in python. There is still a race condidtion.
+$${\color{red} Vulnerable-to-DNS-REBIND-SSRF}$$ Still can't find a propper way to do this in python with requets or urllib. There is still an exloitable race condidtion. 
 - **Disabling HTTP Redirects**: Redirects are not followed by default to maintain control over request destinations. See [redirect-based SSRF](https://portswigger.net/research/top-10-web-hacking-techniques-of-2017#1).
 - **Forbidding IPv6 Usage**: Blocks all connections to IPv6 addresses. IPv6 support might be enabled in the future as its implications for SSRF become clearer. PRs are welcome.
 
 ### Limitation
+- ⛔DNS Rebind based SSRF not fully mitigated⛔ (Any info on how this could be accomplished while still using urllib/requests would be much appreciated)
 - currently only `GET` is implemented
 
 ### Rationale
